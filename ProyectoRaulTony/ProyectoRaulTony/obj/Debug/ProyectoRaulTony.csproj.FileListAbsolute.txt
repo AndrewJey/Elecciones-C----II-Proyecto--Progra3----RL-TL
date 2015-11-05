@@ -1,0 +1,135 @@
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe.config
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.pdb
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmDashBoard.resources
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmLogin.resources
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.Properties.Resources.resources
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csproj.GenerateResource.Cache
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.exe
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.pdb
+F:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csprojResolveAssemblyReference.cache
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe.config
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.exe
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.pdb
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.pdb
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csprojResolveAssemblyReference.cache
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarCandidato.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarPeriodo.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarVotantes.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmDashBoard.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarCandidato.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarPeriodo.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarVotantes.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmLogin.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarCandidato.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarPeriodo.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarVotantes.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmVotar.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.Properties.Resources.resources
+G:\proyecto progra III\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csproj.GenerateResource.Cache
+E:\proyecto progra III\ProyectoRaulTony\proyecto-iii\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe.config
+E:\proyecto progra III\ProyectoRaulTony\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.exe
+E:\proyecto progra III\ProyectoRaulTony\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.pdb
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe.config
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.exe
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.pdb
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.pdb
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csprojResolveAssemblyReference.cache
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarCandidato.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarPeriodo.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarVotantes.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmDashBoard.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarCandidato.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarPeriodo.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarVotantes.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmLogin.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarCandidato.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarPeriodo.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarVotantes.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmVotar.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.Properties.Resources.resources
+F:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csproj.GenerateResource.Cache
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe.config
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.exe
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.pdb
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.pdb
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csprojResolveAssemblyReference.cache
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarCandidato.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarPeriodo.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarVotantes.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmDashBoard.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarCandidato.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarPeriodo.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarVotantes.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmLogin.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarCandidato.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarPeriodo.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarVotantes.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmVotar.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.Properties.Resources.resources
+G:\proyecto progra III\proyecto-iii\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csproj.GenerateResource.Cache
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe.config
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.exe
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.pdb
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csprojResolveAssemblyReference.cache
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarCandidato.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarPeriodo.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarVotantes.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmDashBoard.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarCandidato.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarPeriodo.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmEliminarVotantes.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmLogin.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarCandidato.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarPeriodo.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarVotantes.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmVotar.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.Properties.Resources.resources
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csproj.GenerateResource.Cache
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe
+F:\proyecto progra III\Nueva carpeta\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.pdb
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe.config
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.exe
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.pdb
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.pdb
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarCandidato.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarPeriodo.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarVotantes.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmDashBoard.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmLogin.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarCandidato.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarPeriodo.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarVotantes.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmVotar.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.Properties.Resources.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csproj.GenerateResource.Cache
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.CapaVista.frmVotantes.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.CapaVista.frmCandidatos.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.CapaVista.frmGrafico.resources
+C:\Users\PC\Desktop\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.CapaVista.frmPeriodo.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe.config
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.exe
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.pdb
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.exe
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\bin\Debug\ProyectoRaulTony.pdb
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csprojResolveAssemblyReference.cache
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarCandidato.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarPeriodo.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmAgregarVotantes.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.CapaVista.frmCandidatos.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.CapaVista.frmGrafico.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.CapaVista.frmPeriodo.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.CapaVista.frmVotantes.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmDashBoard.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmLogin.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarCandidato.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarPeriodo.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmModificarVotantes.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.frmVotar.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.Properties.Resources.resources
+F:\Nueva carpeta (2)\ProyectoRaulTony\ProyectoRaulTony\obj\Debug\ProyectoRaulTony.csproj.GenerateResource.Cache
