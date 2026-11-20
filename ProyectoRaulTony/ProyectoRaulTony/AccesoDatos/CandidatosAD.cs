@@ -1,41 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ProyectoRaulTony.AccesoDatos
 {
     public class CandidatosAD : IAccesoDatos
     {
-        //crea el archivo txt donde se guardan los datos
-        string ruta = @Application.StartupPath + "\\Respaldo" + "\\Candidatos.txt";
-        string folderName = @Application.StartupPath + "\\Respaldo\\ImagenesCandidatos";
-        string folderName1 = @Application.StartupPath + "\\Respaldo";
+        private string Ruta => Path.Combine(DataStorageConfig.GetRespaldoDirectory(), "Candidatos.txt");
+        private string FolderImagenes => DataStorageConfig.GetImagenesCandidatosDirectory();
+        private string FolderRespaldo => DataStorageConfig.GetRespaldoDirectory();
 
-        #region Medotos de la Clase padre
-
-        //metodo para conectarse con el archivo txt anteriormente creado
         public void conectar()
         {
             try
             {
-                if (!System.IO.Directory.Exists(folderName))
+                Directory.CreateDirectory(FolderRespaldo);
+                Directory.CreateDirectory(FolderImagenes);
+                if (!File.Exists(Ruta))
                 {
-                    System.IO.Directory.CreateDirectory(folderName);
+                    File.WriteAllText(Ruta, string.Empty, Encoding.UTF8);
                 }
-
-                if (!System.IO.Directory.Exists(folderName1))
-                {
-                    System.IO.Directory.CreateDirectory(folderName1);
-                }
-                if (!File.Exists(ruta))
-                {
-                    File.Create(ruta).Close();
-                }
-
             }
             catch (Exception exception)
             {
@@ -44,13 +29,12 @@ namespace ProyectoRaulTony.AccesoDatos
             }
         }
 
-        //medoto para ingresar o escribir datos en el archivo txt
         public void Escribir(string hilera)
         {
             try
             {
                 this.conectar();
-                using (StreamWriter sw = new StreamWriter(ruta, true))
+                using (StreamWriter sw = new StreamWriter(Ruta, true, Encoding.UTF8))
                 {
                     sw.WriteLine(hilera);
                 }
@@ -62,20 +46,18 @@ namespace ProyectoRaulTony.AccesoDatos
             }
         }
 
-        //metodo que lee los datos guardados en el archivo txt
         public string Leer()
         {
             StringBuilder resultado = new StringBuilder();
-
             try
             {
                 this.conectar();
-
-                using (StreamReader sr = new StreamReader(ruta))
+                using (StreamReader sr = new StreamReader(Ruta, Encoding.UTF8))
                 {
-                    while (sr.Peek() >= 0)
+                    string linea;
+                    while ((linea = sr.ReadLine()) != null)
                     {
-                        resultado.AppendLine(sr.ReadLine());
+                        resultado.AppendLine(linea);
                     }
                 }
             }
@@ -87,32 +69,37 @@ namespace ProyectoRaulTony.AccesoDatos
             return resultado.ToString();
         }
 
-        //metodo que modificar o edita los datos del archivo txt
+        private static bool MatchesId(string linea, string id)
+        {
+            if (string.IsNullOrWhiteSpace(linea) || string.IsNullOrWhiteSpace(id))
+            {
+                return false;
+            }
+
+            string[] parts = linea.Split(new[] { "#%" }, StringSplitOptions.None);
+            if (parts.Length >= 2)
+            {
+                return string.Equals(parts[0].Trim(), id.Trim(), StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(parts[1].Trim(), id.Trim(), StringComparison.OrdinalIgnoreCase);
+            }
+
+            return string.Equals(linea.Trim(), id.Trim(), StringComparison.OrdinalIgnoreCase);
+        }
+
         public void Editar(string id, string modificar)
         {
             try
             {
                 this.conectar();
-
-                StringBuilder agregarLinea = new StringBuilder();
-                StreamReader sr = new StreamReader(ruta);
-
-                string linea;
-                while ((linea = sr.ReadLine()) != null)
+                List<string> lines = new List<string>(File.ReadAllLines(Ruta, Encoding.UTF8));
+                for (int i = 0; i < lines.Count; i++)
                 {
-                    if (linea.Contains(id))
+                    if (MatchesId(lines[i], id))
                     {
-                        agregarLinea.AppendLine(modificar);
-                    }
-                    else
-                    {
-                        agregarLinea.AppendLine(linea);
+                        lines[i] = modificar;
                     }
                 }
-                sr.Close();
-                StreamWriter sw = new StreamWriter(ruta);
-                sw.Write(agregarLinea);
-                sw.Close();
+                File.WriteAllLines(Ruta, lines, Encoding.UTF8);
             }
             catch (Exception exception)
             {
@@ -121,27 +108,20 @@ namespace ProyectoRaulTony.AccesoDatos
             }
         }
 
-        //metodo que elimina datos del archivo txt
         public void Eliminar(string id)
         {
             try
             {
                 this.conectar();
-
-                StringBuilder agregarLinea = new StringBuilder();
-                StreamReader sr = new StreamReader(ruta);
-                string linea;
-                while ((linea = sr.ReadLine()) != null)
+                List<string> kept = new List<string>();
+                foreach (string linea in File.ReadAllLines(Ruta, Encoding.UTF8))
                 {
-                    if (!linea.Contains(id))
+                    if (!MatchesId(linea, id))
                     {
-                        agregarLinea.AppendLine(linea);
+                        kept.Add(linea);
                     }
                 }
-                sr.Close();
-                StreamWriter sw = new StreamWriter(ruta);
-                sw.Write(agregarLinea);
-                sw.Close();
+                File.WriteAllLines(Ruta, kept, Encoding.UTF8);
             }
             catch (Exception exception)
             {
@@ -150,17 +130,7 @@ namespace ProyectoRaulTony.AccesoDatos
             }
         }
 
-        public bool IsError
-        {
-            set;
-            get;
-        }
-
-        public string ErrorDescripcion
-        {
-            set;
-            get;
-        }
-        #endregion
+        public bool IsError { set; get; }
+        public string ErrorDescripcion { set; get; }
     }
 }

@@ -3,95 +3,124 @@ using ProyectoRaulTony.estructura;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoRaulTony.CapaLogica
 {
     public class VotantesCL
     {
-        public bool IsError
-        {
-            set;
-            get;
-        }
+        public bool IsError { set; get; }
+        public string ErrorDescripcion { set; get; }
 
-        public string ErrorDescripcion
-        {
-            set;
-            get;
-        }
-        //metodo que envia datos para que sean agregados
         public void AgregarVotantes(string cedula, string contraseña)
         {
+            IsError = false;
+            ErrorDescripcion = null;
+
+            string ced = (cedula ?? string.Empty).Trim();
+            string pwd = (contraseña ?? string.Empty).Trim();
+            if (string.IsNullOrEmpty(ced) || string.IsNullOrEmpty(pwd))
+            {
+                IsError = true;
+                ErrorDescripcion = "La cédula y la contraseña del votante son obligatorias.";
+                return;
+            }
+
+            if (ObtenerVotante().Any(v => string.Equals(v.Usuario, ced, StringComparison.OrdinalIgnoreCase)))
+            {
+                IsError = true;
+                ErrorDescripcion = "Ya existe un votante registrado con esa cédula.";
+                return;
+            }
+
             IAccesoDatos accesoDatos = new VotantesAD();
             accesoDatos.conectar();
-            accesoDatos.Escribir(cedula + " " + contraseña + "0");
+            accesoDatos.Escribir(ced + " " + pwd + " 0");
 
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
         }
-        //metodo que envia datos para que sean editados
+
         public void EditarVotantes(string id, string contraseña)
         {
+            IsError = false;
+            ErrorDescripcion = null;
+
+            string ced = (id ?? string.Empty).Trim();
+            string pwd = (contraseña ?? string.Empty).Trim();
+            if (string.IsNullOrEmpty(ced) || string.IsNullOrEmpty(pwd))
+            {
+                IsError = true;
+                ErrorDescripcion = "La cédula y la contraseña son obligatorias.";
+                return;
+            }
+
             IAccesoDatos accesoDatos = new VotantesAD();
             accesoDatos.conectar();
-            accesoDatos.Editar(id, id + " " + contraseña);
+            accesoDatos.Editar(ced, ced + " " + pwd + " 0");
 
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
         }
-        //metodo que envia datos para que sean eliminados
+
         public void EliminarVotantes(string id)
         {
+            IsError = false;
+            ErrorDescripcion = null;
+
             IAccesoDatos accesoDatos = new VotantesAD();
             accesoDatos.conectar();
             accesoDatos.Eliminar(id);
 
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
         }
-        //metodo que devuelve una lista de votantes
+
         public List<Votante> ObtenerVotante()
         {
+            IsError = false;
+            ErrorDescripcion = null;
             List<Votante> votantes = new List<Votante>();
 
             IAccesoDatos accesoDatos = new VotantesAD();
             accesoDatos.conectar();
-            StringBuilder informacion = new StringBuilder(accesoDatos.Leer());
+            string informacion = accesoDatos.Leer();
+            string[] lineas = informacion.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-            string[] lineas = informacion.ToString().Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-
-            if (lineas.Any())
+            foreach (string linea in lineas)
             {
-                foreach (var linea in lineas)
+                if (string.IsNullOrWhiteSpace(linea))
                 {
-                    if (!string.IsNullOrWhiteSpace(linea))
-                    {
-                        string[] atributos = linea.Split(new string[] { " " }, StringSplitOptions.None);
-
-                        votantes.Add(new Votante()
-                        {
-                            Usuario = atributos[0],
-                            Contraseña = atributos[1],
-                        });
-                    }
+                    continue;
                 }
+
+                string[] atributos = linea.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                if (atributos.Length < 2)
+                {
+                    continue;
+                }
+
+                votantes.Add(new Votante
+                {
+                    Usuario = atributos[0].Trim(),
+                    Contraseña = atributos[1].Trim()
+                });
             }
+
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
+
             return votantes;
         }
     }

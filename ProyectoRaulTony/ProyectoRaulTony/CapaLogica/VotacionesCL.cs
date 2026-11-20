@@ -2,84 +2,93 @@
 using ProyectoRaulTony.estructura;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoRaulTony.CapaLogica
 {
     public class VotacionesCL
     {
-        public bool IsError
-        {
-            set;
-            get;
-        }
+        public bool IsError { set; get; }
+        public string ErrorDescripcion { set; get; }
 
-        public string ErrorDescripcion
-        {
-            set;
-            get;
-        }
-        //metodo que envia datos para que sean agregados
         public void AgregarVotaciones(string id, string valor)
         {
+            IsError = false;
+            ErrorDescripcion = null;
+
+            int parsedVote;
+            if (string.IsNullOrWhiteSpace(id) || !int.TryParse((valor ?? string.Empty).Trim(), out parsedVote))
+            {
+                IsError = true;
+                ErrorDescripcion = "El identificador y el valor numérico del voto son obligatorios.";
+                return;
+            }
+
             IAccesoDatos accesoDatos = new VotacionesAD();
             accesoDatos.conectar();
-            accesoDatos.Escribir(id + " " + valor);
+            accesoDatos.Escribir(id.Trim() + " " + parsedVote);
 
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
         }
-        //metodo que envia datos para que sean eliminados
+
         public void EliminarVotaciones(string id)
         {
+            IsError = false;
+            ErrorDescripcion = null;
+
             IAccesoDatos accesoDatos = new VotacionesAD();
             accesoDatos.conectar();
             accesoDatos.Eliminar(id);
 
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
         }
-        //metodo que devuelve una lista de votos
+
         public List<Votacion> ObtenerVotaciones()
         {
-            List<Votacion> Votacion = new List<Votacion>();
+            IsError = false;
+            ErrorDescripcion = null;
+            List<Votacion> votaciones = new List<Votacion>();
 
             IAccesoDatos accesoDatos = new VotacionesAD();
             accesoDatos.conectar();
-            StringBuilder informacion = new StringBuilder(accesoDatos.Leer());
+            string informacion = accesoDatos.Leer();
+            string[] lineas = informacion.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-            string[] lineas = informacion.ToString().Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-
-            if (lineas.Any())
+            foreach (string linea in lineas)
             {
-                foreach (var linea in lineas)
+                if (string.IsNullOrWhiteSpace(linea))
                 {
-                    if (!string.IsNullOrWhiteSpace(linea))
-                    {
-                        string[] atributos = linea.Split(new string[] { " " }, StringSplitOptions.None);
-
-                        Votacion.Add(new Votacion()
-                        {
-                            Id = atributos[0],
-                            Voto = Convert.ToInt32(atributos[1])
-                        });
-                    }
+                    continue;
                 }
+
+                string[] atributos = linea.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                int voto;
+                if (atributos.Length < 2 || !int.TryParse(atributos[1], out voto))
+                {
+                    continue;
+                }
+
+                votaciones.Add(new Votacion
+                {
+                    Id = atributos[0].Trim(),
+                    Voto = voto
+                });
             }
+
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
-            return Votacion;
+
+            return votaciones;
         }
     }
 }

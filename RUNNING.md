@@ -28,3 +28,11 @@ Inventario y compilaciones locales del 2026-11-15. Una compilación correcta no 
 
 `.gitignore` excluye credenciales locales, estado del editor y salidas de las herramientas detectadas. No deja de versionar archivos que ya estaban en Git. Los manifiestos, archivos de bloqueo, recursos fuente y scripts de esquema forman parte del código.
 <!-- local-development:end -->
+
+<!-- improvements-20261119:start -->
+## Mejoras y verificación — 2026-11-19 (Integridad de persistencia en archivos y validaciones de capa lógica)
+
+- Corregida la corrupción de contraseñas en `VotantesCL.AgregarVotantes` (faltaba espacio antes del indicador `0`) y la coincidencia por subcadena `Contains(id)` en `Editar`/`Eliminar` que alteraba registros con IDs similares.
+- Añadido soporte de directorio configurable (`ELECCIONES_DATA_DIR`), copia segura de imágenes sin bloqueo de archivo en `CandidatosCL`, y soporte para fechas cortas y formato legado en `PeriodoCL`.
+- Validación: compilación MSBuild y 11 aserciones automatizadas de CRUD en votantes, periodos, votos y candidatos.
+<!-- improvements-20261119:end -->

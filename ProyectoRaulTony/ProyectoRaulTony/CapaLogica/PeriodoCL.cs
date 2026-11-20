@@ -2,101 +2,144 @@
 using ProyectoRaulTony.estructura;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoRaulTony.CapaLogica
 {
-
     public class PeriodoCL
     {
-        public bool IsError
-        {
-            set;
-            get;
-        }
+        public bool IsError { set; get; }
+        public string ErrorDescripcion { set; get; }
 
-        public string ErrorDescripcion
-        {
-            set;
-            get;
-        }
-        //metodo que envia datos para que sean agregados
         public void CrearPeriodo(string fecha, string horaInicio, string horafinal, string estado)
         {
+            IsError = false;
+            ErrorDescripcion = null;
+
+            if (string.IsNullOrWhiteSpace(fecha) || string.IsNullOrWhiteSpace(horaInicio) || string.IsNullOrWhiteSpace(horafinal))
+            {
+                IsError = true;
+                ErrorDescripcion = "La fecha y las horas de inicio y fin son obligatorias.";
+                return;
+            }
+
             IAccesoDatos accesoDatos = new PeriodoAD();
             accesoDatos.conectar();
-            accesoDatos.Escribir(Guid.NewGuid().ToString().Substring(0, 10) + " " + fecha + " " + horaInicio + " " + horafinal + " " + estado);
+            string id = Guid.NewGuid().ToString("N").Substring(0, 10);
+            accesoDatos.Escribir(string.Join("#%", id, fecha.Trim(), horaInicio.Trim(), horafinal.Trim(), (estado ?? string.Empty).Trim()));
 
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
         }
-        //metodo que envia datos para que sean editados
+
         public void EditarPeriodo(string id, string fecha, string horaInicio, string horafinal, string estado)
         {
+            IsError = false;
+            ErrorDescripcion = null;
+
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                IsError = true;
+                ErrorDescripcion = "El identificador del periodo es obligatorio.";
+                return;
+            }
+
             IAccesoDatos accesoDatos = new PeriodoAD();
             accesoDatos.conectar();
-            accesoDatos.Editar(id, id + " " + fecha + " " + horaInicio + " " + horafinal + " " + estado);
+            accesoDatos.Editar(id.Trim(), string.Join("#%", id.Trim(), (fecha ?? string.Empty).Trim(), (horaInicio ?? string.Empty).Trim(), (horafinal ?? string.Empty).Trim(), (estado ?? string.Empty).Trim()));
 
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
         }
-        //metodo que envia datos para que sean eliminados
+
         public void EliminarPeriodo(string id)
         {
+            IsError = false;
+            ErrorDescripcion = null;
+
             IAccesoDatos accesoDatos = new PeriodoAD();
             accesoDatos.conectar();
             accesoDatos.Eliminar(id);
 
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
         }
-        //metodo que devuelve una lista de periodos
+
         public List<Periodo> ObtenerPeriodo()
         {
-            List<Periodo> periodo = new List<Periodo>();
+            IsError = false;
+            ErrorDescripcion = null;
+            List<Periodo> periodos = new List<Periodo>();
 
             IAccesoDatos accesoDatos = new PeriodoAD();
             accesoDatos.conectar();
-            StringBuilder informacion = new StringBuilder(accesoDatos.Leer());
+            string informacion = accesoDatos.Leer();
+            string[] lineas = informacion.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-            string[] lineas = informacion.ToString().Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-
-            if (lineas.Any())
+            foreach (string linea in lineas)
             {
-                foreach (var linea in lineas)
+                if (string.IsNullOrWhiteSpace(linea))
                 {
-                    if (!string.IsNullOrWhiteSpace(linea))
-                    {
-                        string[] atributos = linea.Split(new string[] { " " }, StringSplitOptions.None);
+                    continue;
+                }
 
-                        periodo.Add(new Periodo()
+                if (linea.Contains("#%"))
+                {
+                    string[] partes = linea.Split(new[] { "#%" }, StringSplitOptions.None);
+                    if (partes.Length >= 5)
+                    {
+                        periodos.Add(new Periodo
                         {
-                            id = atributos[0],
-                            fecha = atributos[1] + " " + atributos[2] + " " + atributos[3] + " " + atributos[4] + " " + atributos[5] + " " + atributos[6],
-                            horaInicio = atributos[7] + " " + atributos[8],
-                            horaFinal = atributos[9] + " " + atributos[10],
-                            estado = atributos[11],
+                            id = partes[0].Trim(),
+                            fecha = partes[1].Trim(),
+                            horaInicio = partes[2].Trim(),
+                            horaFinal = partes[3].Trim(),
+                            estado = partes[4].Trim()
                         });
                     }
+                    continue;
+                }
+
+                string[] atributos = linea.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                if (atributos.Length >= 12)
+                {
+                    periodos.Add(new Periodo
+                    {
+                        id = atributos[0],
+                        fecha = string.Join(" ", atributos[1], atributos[2], atributos[3], atributos[4], atributos[5], atributos[6]),
+                        horaInicio = atributos[7] + " " + atributos[8],
+                        horaFinal = atributos[9] + " " + atributos[10],
+                        estado = atributos[11]
+                    });
+                }
+                else if (atributos.Length >= 5)
+                {
+                    periodos.Add(new Periodo
+                    {
+                        id = atributos[0],
+                        fecha = atributos[1],
+                        horaInicio = atributos[2],
+                        horaFinal = atributos[3],
+                        estado = atributos[4]
+                    });
                 }
             }
+
             if (accesoDatos.IsError)
             {
-                this.IsError = true;
-                this.ErrorDescripcion = accesoDatos.ErrorDescripcion;
+                IsError = true;
+                ErrorDescripcion = accesoDatos.ErrorDescripcion;
             }
-            return periodo;
+
+            return periodos;
         }
     }
 }
